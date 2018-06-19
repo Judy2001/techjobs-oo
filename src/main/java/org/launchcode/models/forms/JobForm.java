@@ -22,21 +22,25 @@ public class JobForm {
     @NotNull
     private int employerId;
 
+    @NotNull
+    private int locationId;
+
+    @NotNull
+    private int coreCompetencyId;
+
+    @NotNull
+    private int positionTypeId;
+
+
     /*
         TODO #3 - Included other fields needed to create a job,
         with correct validation attributes and display names.
         Don't forget to add getters and setters
      */
-    @NotNull
-    @Size(min=1, message = "Location may not be empty")
     private String location;
 
-    @NotNull
-    @Size(min=1, message="Skill (core competency) may not be empty")
     private String coreCompetency;
 
-    @NotNull
-    @Size(min=1, message="Position type may not be empty")
     private String positionType;
 
 
@@ -132,4 +136,27 @@ public class JobForm {
         this.positionTypes = positionTypes;
     }
 
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public int getCoreCompetencyId() {
+        return coreCompetencyId;
+    }
+
+    public void setCoreCompetencyId(int coreCompetencyId) {
+        this.coreCompetencyId = coreCompetencyId;
+    }
+
+    public int getPositionTypeId() {
+        return positionTypeId;
+    }
+
+    public void setPositionTypeId(int positionTypeId) {
+        this.positionTypeId = positionTypeId;
+    }
 }

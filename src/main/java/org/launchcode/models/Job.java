@@ -3,6 +3,7 @@ package org.launchcode.models;
 /**
  * Created by LaunchCode
  */
+
 public class Job {
 
     private int id;
@@ -14,10 +15,12 @@ public class Job {
     private PositionType positionType;
     private CoreCompetency coreCompetency;
 
+
     public Job() {
         id = nextId;
         nextId++;
     }
+
 
     public Job(String aName, Employer aEmployer, Location aLocation,
                PositionType aPositionType, CoreCompetency aSkill) {
@@ -31,6 +34,7 @@ public class Job {
         coreCompetency = aSkill;
 
     }
+
 
     public String getName() {
         return name;
@@ -76,6 +80,7 @@ public class Job {
         return id;
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -85,6 +90,7 @@ public class Job {
 
         return id == job.id;
     }
+
 
     @Override
     public int hashCode() {

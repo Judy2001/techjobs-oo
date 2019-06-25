@@ -1,5 +1,6 @@
 package org.launchcode.models.forms;
 
+
 import org.launchcode.models.CoreCompetency;
 import org.launchcode.models.Employer;
 import org.launchcode.models.Location;
@@ -13,6 +14,7 @@ import java.util.ArrayList;
 /**
  * Created by LaunchCode
  */
+
 public class JobForm {
 
     @NotNull
@@ -49,6 +51,7 @@ public class JobForm {
     private ArrayList<CoreCompetency> coreCompetencies;
     private ArrayList<PositionType> positionTypes;
 
+
     public JobForm() {
 
         JobData jobData = JobData.getInstance();
@@ -63,6 +66,7 @@ public class JobForm {
         positionTypes = jobData.getPositionTypes().findAll();
 
     }
+
 
     public String getName() {
         return name;
@@ -159,4 +163,5 @@ public class JobForm {
     public void setPositionTypeId(int positionTypeId) {
         this.positionTypeId = positionTypeId;
     }
+
 }

@@ -3,6 +3,7 @@ package org.launchcode.models;
 /**
  * Created by LaunchCode
  */
+
 public enum JobFieldType {
 
     EMPLOYER ("Employer"),
@@ -13,9 +14,11 @@ public enum JobFieldType {
 
     private final String name;
 
+
     JobFieldType(String name) {
         this.name = name;
     }
+
 
     public String getName() {
         return name;

@@ -1,10 +1,12 @@
 package org.launchcode.models.forms;
 
+
 import org.launchcode.models.JobFieldType;
 
 /**
  * Created by LaunchCode
  */
+
 public class SearchForm {
 
     // The search options
@@ -15,6 +17,7 @@ public class SearchForm {
 
     // The search string
     private String keyword;
+
 
     public JobFieldType getSearchField() {
         return searchField;
@@ -35,4 +38,5 @@ public class SearchForm {
     public void setKeyword(String keyword) {
         this.keyword = keyword;
     }
+
 }

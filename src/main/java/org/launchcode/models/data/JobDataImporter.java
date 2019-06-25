@@ -1,5 +1,6 @@
 package org.launchcode.models.data;
 
+
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -18,6 +19,7 @@ import java.util.List;
 /**
  * Created by LaunchCode
  */
+
 public class JobDataImporter {
 
     private static final String DATA_FILE = "job_data.csv";

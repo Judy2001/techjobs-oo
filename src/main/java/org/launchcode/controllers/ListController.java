@@ -1,5 +1,6 @@
 package org.launchcode.controllers;
 
+
 import org.launchcode.models.Job;
 import org.launchcode.models.JobField;
 import org.launchcode.models.JobFieldType;
@@ -15,11 +16,13 @@ import java.util.HashMap;
 /**
  * Created by LaunchCode
  */
+
 @Controller
 @RequestMapping(value = "list")
 public class ListController {
 
     private JobData jobData = JobData.getInstance();
+
 
     @RequestMapping(value = "")
     public String list(Model model) {
@@ -27,6 +30,7 @@ public class ListController {
         model.addAttribute("fields", fields);
         return "list";
     }
+
 
     @RequestMapping(value = "values")
     public String listColumnValues(Model model, @RequestParam JobFieldType column) {
@@ -60,6 +64,7 @@ public class ListController {
         return "list-column";
     }
 
+
     @RequestMapping(value = "jobs")
     public String listJobsByColumnAndValue(Model model,
             @RequestParam JobFieldType column, @RequestParam String name) {
@@ -72,6 +77,7 @@ public class ListController {
         return "list-jobs";
     }
 
+
     @RequestMapping(value = "all")
     public String listAllJobs(Model model) {
 
@@ -82,4 +88,5 @@ public class ListController {
 
         return "list-jobs";
     }
+
 }

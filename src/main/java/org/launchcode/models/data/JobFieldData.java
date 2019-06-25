@@ -1,5 +1,6 @@
 package org.launchcode.models.data;
 
+
 import org.launchcode.models.Job;
 import org.launchcode.models.JobField;
 
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 /**
  * Created by LaunchCode
  */
+
 public class JobFieldData<T extends JobField> {
 
     private ArrayList<T> allFields = new ArrayList<>();
@@ -15,6 +17,7 @@ public class JobFieldData<T extends JobField> {
     public ArrayList<T> findAll() {
         return allFields;
     }
+
 
     public T findById(int id) {
         for (T item : allFields) {
@@ -24,6 +27,7 @@ public class JobFieldData<T extends JobField> {
 
         return null;
     }
+
 
     public void add(T item) {
         allFields.add(item);

@@ -1,5 +1,6 @@
 package org.launchcode.controllers;
 
+
 import org.launchcode.models.Job;
 import org.launchcode.models.JobFieldType;
 import org.launchcode.models.forms.SearchForm;
@@ -14,17 +15,20 @@ import java.util.ArrayList;
 /**
  * Created by LaunchCode
  */
+
 @Controller
 @RequestMapping("search")
 public class SearchController {
 
     private JobData jobData = JobData.getInstance();
 
+
     @RequestMapping(value = "")
     public String search(Model model) {
         model.addAttribute(new SearchForm());
         return "search";
     }
+
 
     @RequestMapping(value = "results")
     public String search(Model model,

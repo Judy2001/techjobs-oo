@@ -1,5 +1,6 @@
 package org.launchcode.controllers;
 
+
 import org.launchcode.models.Job;
 import org.launchcode.models.forms.JobForm;
 import org.launchcode.models.data.JobData;
@@ -15,11 +16,13 @@ import javax.validation.Valid;
 /**
  * Created by LaunchCode
  */
+
 @Controller
 @RequestMapping(value = "job")
 public class JobController {
 
     private JobData jobData = JobData.getInstance();
+
 
     // The detail display for a given Job at URLs like /job?id=17
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -30,12 +33,14 @@ public class JobController {
         return "job-detail";
     }
 
+
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model) {
         model.addAttribute("title", "Add Job");
         model.addAttribute(new JobForm());
         return "new-job";
     }
+
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String add(Model model, @ModelAttribute @Valid JobForm jobForm, Errors errors) {
@@ -48,13 +53,16 @@ public class JobController {
            return "new-job";
         }
 
-       Job newJob = new Job(jobForm.getName(),
+        Job newJob = new Job(
+                jobForm.getName(),
                 jobData.getEmployers().findById(jobForm.getEmployerId()),
                 jobData.getLocations().findById(jobForm.getLocationId()),
                 jobData.getPositionTypes().findById(jobForm.getPositionTypeId()),
                 jobData.getCoreCompetencies().findById(jobForm.getCoreCompetencyId()));
+
         jobData.add(newJob);
 
         return "redirect:/job?id=" + newJob.getId();
     }
+
 }
